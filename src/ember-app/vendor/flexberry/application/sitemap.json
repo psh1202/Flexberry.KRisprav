@@ -1,0 +1,59 @@
+﻿{
+  "applicationCaption": "K risprav",
+  "applicationTitle": "K risprav",
+  "items": [
+    {
+      "link": null,
+      "menuName": "вакансии",
+      "caption": "Вакансии",
+      "title": "Вакансии",
+      "children": [
+        {
+          "link": "i-i-s-k-risprav-вакансии-l",
+          "menuName": null,
+          "caption": "Вакансии",
+          "title": "",
+          "children": null
+        }
+      ]
+    },
+    {
+      "link": null,
+      "menuName": "сотрудники",
+      "caption": "Сотрудники",
+      "title": "Сотрудники",
+      "children": [
+        {
+          "link": "i-i-s-k-risprav-сотрудники-l",
+          "menuName": null,
+          "caption": "Сотрудники",
+          "title": "",
+          "children": null
+        },
+        {
+          "link": "i-i-s-k-risprav-должность-l",
+          "menuName": null,
+          "caption": "Должность",
+          "title": "",
+          "children": null
+        }
+      ]
+    },
+    {
+      "link": null,
+      "menuName": "командировки",
+      "caption": "Командировки",
+      "title": "Командировки",
+      "children": [
+        {
+          "link": "i-i-s-k-risprav-командировка-l",
+          "menuName": null,
+          "caption": "Командировка",
+          "title": "",
+          "children": null
+        }
+      ]
+    }
+  ],
+  "mobile": true
+}

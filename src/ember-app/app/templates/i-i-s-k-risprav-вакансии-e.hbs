@@ -1,0 +1,76 @@
+<h3 class="ui header">{{t "forms.i-i-s-k-risprav-вакансии-e.caption"}}</h3>
+
+<form class="ui form flexberry-vertical-form" role="form">
+  {{flexberry-error error=error}}
+  <div class="field">
+    <div class="flexberry-edit-panel">
+      {{#unless readonly}}
+        <button class="ui button save-button" {{action "save"}}>
+          {{t "forms.edit-form.save-button-text"}}
+        </button>
+        {{#unless model.isNew}}
+          <button class="ui button save-del-button" {{action "delete"}}>
+            {{t "forms.edit-form.delete-button-text"}}
+          </button>
+        {{/unless}}
+      {{/unless}}
+      <button class="ui button close-button" {{action "close"}}>
+        {{t "forms.edit-form.close-button-text"}}
+      </button>
+    </div>
+  </div>
+  <div class="field flexberry-validationsummary-container">
+    <div class="sixteen wide">
+      {{flexberry-validationsummary errors=(v-get validationObject "messages")}}
+    </div>
+  </div>
+  <div class="field" data-test-i-i-s-k-risprav-вакансии-e-требуемыйОпыт="true">
+    <label>{{t "forms.i-i-s-k-risprav-вакансии-e.требуемыйОпыт-caption"}}</label>
+    {{flexberry-dropdown
+      items=(flexberry-enum "i-i-s-k-risprav-опыт")
+      value=model.требуемыйОпыт
+      class=(if (v-get validationModel "требуемыйОпыт" "isInvalid") "error")
+      readonly=readonly
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "требуемыйОпыт" "message")}}
+  </div>
+  <div class="field" data-test-i-i-s-k-risprav-вакансии-e-образование="true">
+    <label>{{t "forms.i-i-s-k-risprav-вакансии-e.образование-caption"}}</label>
+    {{flexberry-dropdown
+      items=(flexberry-enum "i-i-s-k-risprav-вид-образования")
+      value=model.образование
+      class=(if (v-get validationModel "образование" "isInvalid") "error")
+      readonly=readonly
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "образование" "message")}}
+  </div>
+  <div class="field">
+    <label>{{t "forms.i-i-s-k-risprav-вакансии-e.датаСоздания-caption"}}</label>
+    {{flexberry-simpledatetime
+      type="date"
+      readonly=readonly
+      value=model.датаСоздания
+      class=(if (v-get validationModel "датаСоздания" "isInvalid") "error")
+      data-test-i-i-s-k-risprav-вакансии-e-датаСоздания=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "датаСоздания" "message")}}
+  </div>
+  <div class="field">
+    <label>{{t "forms.i-i-s-k-risprav-вакансии-e.должность-caption"}}</label>
+    {{flexberry-lookup
+      choose="showLookupDialog"
+      remove="removeLookupValue"
+      value=model.должность
+      displayAttributeName="наименование"
+      autocomplete=true
+      relationName="должность"
+      projection="ДолжностьL"
+      title=(t "forms.i-i-s-k-risprav-вакансии-e.должность-caption")
+      readonly=readonly
+      componentName="должностьLookup"
+      class=(if (v-get validationModel "должность" "isInvalid") "error")
+      data-test-i-i-s-k-risprav-вакансии-e-должность=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "должность" "message")}}
+  </div>
+</form>

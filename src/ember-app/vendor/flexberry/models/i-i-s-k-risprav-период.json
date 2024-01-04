@@ -1,0 +1,63 @@
+﻿{
+  "name": "IISKRispravПериод",
+  "modelName": "i-i-s-k-risprav-период",
+  "className": "Период",
+  "nameSpace": "IIS.KRisprav",
+  "parentModelName": null,
+  "parentClassName": null,
+  "attrs": [
+    {
+      "name": "конец",
+      "type": "date",
+      "flexberryType": "DateTime",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "начало",
+      "type": "date",
+      "flexberryType": "DateTime",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    }
+  ],
+  "belongsTo": [
+    {
+      "polymorphic": false,
+      "presence": true,
+      "name": "командировка",
+      "relatedTo": "i-i-s-k-risprav-командировка",
+      "inverse": "период"
+    }
+  ],
+  "hasMany": [],
+  "projections": [
+    {
+      "name": "ПериодE",
+      "modelName": "i-i-s-k-risprav-период",
+      "attrs": [
+        {
+          "name": "начало",
+          "caption": "Начало",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "конец",
+          "caption": "Конец",
+          "hidden": false,
+          "index": 1
+        }
+      ],
+      "belongsTo": [],
+      "hasMany": []
+    }
+  ],
+  "stored": true,
+  "offline": true,
+  "external": false
+}

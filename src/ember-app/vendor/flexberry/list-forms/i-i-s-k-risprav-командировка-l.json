@@ -1,0 +1,15 @@
+﻿{
+  "newForm": "i-i-s-k-risprav-командировка-e",
+  "editForm": "i-i-s-k-risprav-командировка-e",
+  "external": false,
+  "caption": "Командировка",
+  "name": "IISKRispravКомандировкаL",
+  "className": "КомандировкаL",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "i-i-s-k-risprav-командировка",
+      "modelProjection": "КомандировкаL"
+    }
+  ]
+}

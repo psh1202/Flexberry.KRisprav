@@ -1,0 +1,8 @@
+﻿{
+  "nameSpace": "IIS.KRisprav",
+  "className": "Действия",
+  "enumObjects": {
+    "Печать": "Печать",
+    "ЭлПочта": "ЭлПочта"
+  }
+}

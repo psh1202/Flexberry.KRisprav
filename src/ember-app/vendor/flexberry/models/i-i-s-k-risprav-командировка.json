@@ -1,0 +1,225 @@
+﻿{
+  "name": "IISKRispravКомандировка",
+  "modelName": "i-i-s-k-risprav-командировка",
+  "className": "Командировка",
+  "nameSpace": "IIS.KRisprav",
+  "parentModelName": null,
+  "parentClassName": null,
+  "attrs": [
+    {
+      "name": "датаЗаполнения",
+      "type": "date",
+      "flexberryType": "DateTime",
+      "notNull": false,
+      "defaultValue": "Now",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "действие",
+      "type": "i-i-s-k-risprav-действия",
+      "flexberryType": "Действия",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "колвоДней",
+      "type": "number",
+      "flexberryType": "int",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "местоНазначения",
+      "type": "string",
+      "flexberryType": "string",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "номерДокумента",
+      "type": "number",
+      "flexberryType": "int",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "цель",
+      "type": "string",
+      "flexberryType": "string",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    }
+  ],
+  "belongsTo": [
+    {
+      "polymorphic": false,
+      "presence": true,
+      "name": "сотрудники",
+      "relatedTo": "i-i-s-k-risprav-сотрудники",
+      "inverse": null
+    }
+  ],
+  "hasMany": [
+    {
+      "name": "период",
+      "relatedTo": "i-i-s-k-risprav-период",
+      "inverse": "командировка"
+    }
+  ],
+  "projections": [
+    {
+      "name": "КомандировкаE",
+      "modelName": "i-i-s-k-risprav-командировка",
+      "attrs": [
+        {
+          "name": "датаЗаполнения",
+          "caption": "Дата заполнения",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "номерДокумента",
+          "caption": "Номер документа",
+          "hidden": false,
+          "index": 1
+        },
+        {
+          "name": "местоНазначения",
+          "caption": "Место назначения",
+          "hidden": false,
+          "index": 2
+        },
+        {
+          "name": "цель",
+          "caption": "Цель",
+          "hidden": false,
+          "index": 3
+        },
+        {
+          "name": "колвоДней",
+          "caption": "Колво дней",
+          "hidden": false,
+          "index": 4
+        },
+        {
+          "name": "действие",
+          "caption": "Действие",
+          "hidden": false,
+          "index": 5
+        }
+      ],
+      "belongsTo": [
+        {
+          "lookupValue": "ФИО",
+          "lookupValueField": "фИО",
+          "relationName": "Сотрудники",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "фИО",
+              "caption": "ФИО",
+              "hidden": true,
+              "index": 7
+            }
+          ],
+          "index": 6,
+          "type": "standard",
+          "caption": "Сотрудники",
+          "name": "сотрудники",
+          "relatedTo": "i-i-s-k-risprav-сотрудники",
+          "inverse": null
+        }
+      ],
+      "hasMany": [
+        {
+          "projectionName": "ПериодE",
+          "caption": "Период",
+          "name": "период",
+          "relatedTo": "i-i-s-k-risprav-период",
+          "inverse": null
+        }
+      ]
+    },
+    {
+      "name": "КомандировкаL",
+      "modelName": "i-i-s-k-risprav-командировка",
+      "attrs": [
+        {
+          "name": "датаЗаполнения",
+          "caption": "Дата заполнения",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "номерДокумента",
+          "caption": "Номер документа",
+          "hidden": false,
+          "index": 1
+        },
+        {
+          "name": "местоНазначения",
+          "caption": "Место назначения",
+          "hidden": false,
+          "index": 2
+        },
+        {
+          "name": "цель",
+          "caption": "Цель",
+          "hidden": false,
+          "index": 3
+        },
+        {
+          "name": "колвоДней",
+          "caption": "Колво дней",
+          "hidden": false,
+          "index": 4
+        },
+        {
+          "name": "действие",
+          "caption": "Действие",
+          "hidden": false,
+          "index": 5
+        }
+      ],
+      "belongsTo": [
+        {
+          "lookupValue": null,
+          "lookupValueField": null,
+          "relationName": "Сотрудники",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "фИО",
+              "caption": "ФИО",
+              "hidden": false,
+              "index": 6
+            }
+          ],
+          "index": -1,
+          "type": "default",
+          "caption": "ФИО",
+          "name": "сотрудники",
+          "relatedTo": "i-i-s-k-risprav-сотрудники",
+          "inverse": null
+        }
+      ],
+      "hasMany": []
+    }
+  ],
+  "stored": true,
+  "offline": true,
+  "external": false
+}

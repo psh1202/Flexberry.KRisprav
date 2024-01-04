@@ -1,0 +1,120 @@
+<h3 class="ui header">{{t "forms.i-i-s-k-risprav-командировка-e.caption"}}</h3>
+
+<form class="ui form flexberry-vertical-form" role="form">
+  {{flexberry-error error=error}}
+  <div class="field">
+    <div class="flexberry-edit-panel">
+      {{#unless readonly}}
+        <button class="ui button save-button" {{action "save"}}>
+          {{t "forms.edit-form.save-button-text"}}
+        </button>
+        {{#unless model.isNew}}
+          <button class="ui button save-del-button" {{action "delete"}}>
+            {{t "forms.edit-form.delete-button-text"}}
+          </button>
+        {{/unless}}
+      {{/unless}}
+      <button class="ui button close-button" {{action "close"}}>
+        {{t "forms.edit-form.close-button-text"}}
+      </button>
+    </div>
+  </div>
+  <div class="field flexberry-validationsummary-container">
+    <div class="sixteen wide">
+      {{flexberry-validationsummary errors=(v-get validationObject "messages")}}
+    </div>
+  </div>
+  <div class="field">
+    <label>{{t "forms.i-i-s-k-risprav-командировка-e.датаЗаполнения-caption"}}</label>
+    {{flexberry-simpledatetime
+      type="date"
+      readonly=readonly
+      value=model.датаЗаполнения
+      class=(if (v-get validationModel "датаЗаполнения" "isInvalid") "error")
+      data-test-i-i-s-k-risprav-командировка-e-датаЗаполнения=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "датаЗаполнения" "message")}}
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=readonly
+      value=model.номерДокумента
+      class=(if (v-get validationModel "номерДокумента" "isInvalid") "error")
+      label=(t "forms.i-i-s-k-risprav-командировка-e.номерДокумента-caption")
+      data-test-i-i-s-k-risprav-командировка-e-номерДокумента=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "номерДокумента" "message")}}
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=readonly
+      value=model.местоНазначения
+      class=(if (v-get validationModel "местоНазначения" "isInvalid") "error")
+      label=(t "forms.i-i-s-k-risprav-командировка-e.местоНазначения-caption")
+      data-test-i-i-s-k-risprav-командировка-e-местоНазначения=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "местоНазначения" "message")}}
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=readonly
+      value=model.цель
+      class=(if (v-get validationModel "цель" "isInvalid") "error")
+      label=(t "forms.i-i-s-k-risprav-командировка-e.цель-caption")
+      data-test-i-i-s-k-risprav-командировка-e-цель=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "цель" "message")}}
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=readonly
+      value=model.колвоДней
+      class=(if (v-get validationModel "колвоДней" "isInvalid") "error")
+      label=(t "forms.i-i-s-k-risprav-командировка-e.колвоДней-caption")
+      data-test-i-i-s-k-risprav-командировка-e-колвоДней=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "колвоДней" "message")}}
+  </div>
+  <div class="field" data-test-i-i-s-k-risprav-командировка-e-действие="true">
+    <label>{{t "forms.i-i-s-k-risprav-командировка-e.действие-caption"}}</label>
+    {{flexberry-dropdown
+      items=(flexberry-enum "i-i-s-k-risprav-действия")
+      value=model.действие
+      class=(if (v-get validationModel "действие" "isInvalid") "error")
+      readonly=readonly
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "действие" "message")}}
+  </div>
+  <div class="field">
+    <label>{{t "forms.i-i-s-k-risprav-командировка-e.сотрудники-caption"}}</label>
+    {{flexberry-lookup
+      choose="showLookupDialog"
+      remove="removeLookupValue"
+      value=model.сотрудники
+      displayAttributeName="фИО"
+      autocomplete=true
+      relationName="сотрудники"
+      projection="СотрудникиL"
+      title=(t "forms.i-i-s-k-risprav-командировка-e.сотрудники-caption")
+      readonly=readonly
+      componentName="сотрудникиLookup"
+      class=(if (v-get validationModel "сотрудники" "isInvalid") "error")
+      data-test-i-i-s-k-risprav-командировка-e-сотрудники=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "сотрудники" "message")}}
+  </div>
+  <div class="field">
+    <label>{{t "forms.i-i-s-k-risprav-командировка-e.период-caption"}}</label>
+    {{flexberry-groupedit
+      componentName="периодGroupEdit"
+      mainModelProjection=modelProjection
+      modelProjection=modelProjection.attributes.период
+      content=model.период
+      readonly=readonly
+      orderable=false
+      class=(if (v-get validationModel "период" "isInvalid") "error")
+      data-test-i-i-s-k-risprav-командировка-e-период=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "период" "message")}}
+  </div>
+</form>

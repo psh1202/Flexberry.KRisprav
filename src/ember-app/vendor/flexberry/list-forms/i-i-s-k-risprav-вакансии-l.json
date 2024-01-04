@@ -1,0 +1,15 @@
+﻿{
+  "newForm": "i-i-s-k-risprav-вакансии-e",
+  "editForm": "i-i-s-k-risprav-вакансии-e",
+  "external": false,
+  "caption": "Вакансии",
+  "name": "IISKRispravВакансииL",
+  "className": "ВакансииL",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "i-i-s-k-risprav-вакансии",
+      "modelProjection": "ВакансииL"
+    }
+  ]
+}

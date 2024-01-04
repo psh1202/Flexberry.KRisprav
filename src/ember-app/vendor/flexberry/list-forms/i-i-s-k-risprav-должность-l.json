@@ -1,0 +1,15 @@
+﻿{
+  "newForm": "i-i-s-k-risprav-должность-e",
+  "editForm": "i-i-s-k-risprav-должность-e",
+  "external": false,
+  "caption": "Должность",
+  "name": "IISKRispravДолжностьL",
+  "className": "ДолжностьL",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "i-i-s-k-risprav-должность",
+      "modelProjection": "ДолжностьL"
+    }
+  ]
+}
